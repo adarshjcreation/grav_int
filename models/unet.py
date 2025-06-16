@@ -1,3 +1,15 @@
+import numpy as np
+import torch
+import torch.nn as nn
+from torchsummary import summary
+from torch.autograd import Variable
+import torch.nn.functional as F
+
+
+# Unet model 
+# Reference: "Huang, R., Liu, S., Qi, R., & Zhang, Y. (2021). Deep learning 3D sparse inversion of gravity data.
+#              Journal of Geophysical Research: Solid Earth, 126(11), e2021JB022476."
+
 class double_conv(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size=3, stride=1, padding=1):
         super(double_conv, self).__init__()
